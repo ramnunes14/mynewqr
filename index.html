@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-PT">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,20 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Substitui o dominio se mudares de host. -->
-    <title>Gerador de QR Code Gr&aacute;tis &mdash; PNG/SVG, Cores e Logo</title>
-    <meta name="description" content="Gera QR Codes gr&aacute;tis para URL, texto, Wi-Fi e vCard. Personaliza cores, tamanho e logo. Faz download em PNG ou SVG." />
+    <title>Free QR Code Generator &mdash; PNG/SVG, Colors and Logo</title>
+    <meta name="description" content="Create free QR Codes for URL, text, Wi-Fi and vCard. Customize colors, logo and download PNG or SVG." />
     <link rel="canonical" href="https://mynewqr.com/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Gerador de QR Code Gr&aacute;tis &mdash; PNG/SVG, Cores e Logo" />
-    <meta property="og:description" content="Gera QR Codes gr&aacute;tis para URL, texto, Wi-Fi e vCard. Personaliza e faz download." />
+    <meta property="og:title" content="Free QR Code Generator &mdash; PNG/SVG, Colors and Logo" />
+    <meta property="og:description" content="Create free QR Codes for URL, text, Wi-Fi and vCard. Customize and download." />
     <meta property="og:url" content="https://mynewqr.com/" />
     <meta property="og:image" content="https://mynewqr.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="alternate" hreflang="pt" href="https://mynewqr.com/" />
-    <link rel="alternate" hreflang="en" href="https://mynewqr.com/?lang=en" />
-    <link rel="alternate" hreflang="es" href="https://mynewqr.com/?lang=es" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/src/style.css" />
@@ -35,11 +31,11 @@
       {
         "@context":"https://schema.org",
         "@type":"WebApplication",
-        "name":"Gerador de QR Code Gr\u00e1tis",
+        "name":"Free QR Code Generator",
         "applicationCategory":"UtilityApplication",
         "operatingSystem":"All",
         "url":"https://mynewqr.com/",
-        "description":"Gera QR Codes gr\u00e1tis para URL, texto, Wi-Fi e vCard. Exporta PNG/SVG e suporta logo."
+        "description":"Create free QR Codes for URL, text, Wi-Fi and vCard. Export PNG/SVG and add a logo."
       }
     </script>
   </head>
@@ -49,34 +45,29 @@
         <div class="brand">
           <img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" />
         </div>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
         </button>
         <nav class="nav" id="navLinks">
           <a href="/">Home</a>
-          <a href="/privacy.html">Privacidade</a>
-          <a href="/terms.html">Termos</a>
-          <a class="cta-header" href="#generator">Criar QR</a>
-          <select id="langSwitch" aria-label="Idioma">
-            <option value="pt">PT</option>
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+          <a class="cta-header" href="#generator">Create QR</a>
         </nav>
       </div>
     </header>
     <div class="hero">
-          <h1>Cria o teu QR Code em segundos</h1>
-          <p class="sub">Gr&aacute;tis &bull; Sem registo &bull; Download PNG e SVG</p>
-        </div>
+      <h1 id="heroTitle">Create your QR Code in seconds</h1>
+      <p class="sub" id="heroSub">Free • No signup • Download PNG and SVG</p>
+    </div>
     <main class="wrap grid" id="generator">
       
       <section class="card">
         
 
-        <div class="tab-bar" role="tablist" aria-label="Tipo de QR">
+        <div class="tab-bar" role="tablist" aria-label="QR type">
           <button class="tab active" data-type="url" role="tab" aria-selected="true">URL</button>
-          <button class="tab" data-type="text" role="tab" aria-selected="false">Texto</button>
+          <button class="tab" data-type="text" role="tab" aria-selected="false">Text</button>
           <button class="tab" data-type="vcard" role="tab" aria-selected="false">vCard</button>
           <button class="tab" data-type="wifi" role="tab" aria-selected="false">Wi-Fi</button>
         </div>
@@ -84,11 +75,11 @@
         <div id="inputs" class="input-area"></div>
 
         <div class="ad-slot slim">
-          <small class="ad-hint">Espa&ccedil;o reservado para an&uacute;ncio</small>
+          <small class="ad-hint">Ad placeholder</small>
         </div>
 
         <details class="details" id="panelDetails">
-          <summary>Personaliza&ccedil;&atilde;o</summary>
+          <summary>Personalization</summary>
 
           <div class="row2">
             <div>
@@ -101,51 +92,52 @@
               </select>
             </div>
             <div>
-              <label>Cor QR</label>
+              <label>QR color</label>
               <input id="fg" type="color" value="#111111" />
             </div>
           </div>
 
           <div class="row2">
             <div>
-              <label>Fundo</label>
+              <label>Background</label>
               <input id="bg" type="color" value="#ffffff" />
             </div>
             <div>
-              <label>Logo (opcional)</label>
+              <label>Logo (optional)</label>
               <input id="logo" type="file" accept="image/*" />
-              <small class="hint">Usa EC Q/H para logo.</small>
+              <small class="hint">Use EC Q/H for logos.</small>
             </div>
           </div>
 
           <div class="row2">
             <div>
-              <label>Tamanho do logo (%)</label>
+              <label>Logo size (%)</label>
               <input id="logoScale" type="number" min="10" max="40" value="22" />
             </div>
             <div>
-              <label>Arredondar logo</label>
+              <label>Round logo</label>
               <select id="logoRound">
-                <option value="yes" selected>Sim</option>
-                <option value="no">N&atilde;o</option>
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
               </select>
             </div>
           </div>
         </details>
 
         <div class="actions">
-          <button id="btnCopy" class="btn">Copiar imagem</button>
+          <button id="btnCopy" class="btn">Copy image</button>
           <button id="btnReset" class="btn ghost">Reset</button>
         </div>
 
         <p class="note">
-          Gerado localmente no teu browser. N&atilde;o guardamos nada.
+          Generated locally in your browser. We do not store any data.
         </p>
       </section>
 
       <aside class="card preview">
         <div class="preview-head">
-          
+          <h2>Preview</h2>
+          <p class="mini-note">Live updates as you type.</p>
         </div>
         <div class="preview-box" id="previewBox">
           <div class="preview-skeleton"></div>
@@ -159,17 +151,17 @@
 
         <div class="mini">
           <div class="mini-item">
-            <span class="mini-k">Conte&uacute;do</span>
+            <span class="mini-k">Content</span>
             <span class="mini-v" id="payloadPreview">&mdash;</span>
           </div>
           <div class="mini-item">
-            <span class="mini-k">Dica</span>
-            <span class="mini-v">Para logo, usa EC = Q/H (margem padr&atilde;o 2).</span>
+            <span class="mini-k">Tip</span>
+            <span class="mini-v">For logos, use EC = Q/H (default margin 2).</span>
           </div>
         </div>
 
         <div class="ad-slot slim">
-          <small class="ad-hint">Espa&ccedil;o reservado para an&uacute;ncio</small>
+          <small class="ad-hint">Ad placeholder</small>
         </div>
       </aside>
     </main>
@@ -178,9 +170,9 @@
       <div class="wrap footer-inner">
         <span>&copy; <span id="year"></span> QR Generator</span>
         <span class="sep">&bull;</span>
-        <a href="/privacy.html">Privacidade</a>
+        <a href="/privacy.html">Privacy</a>
         <span class="sep">&bull;</span>
-        <a href="/terms.html">Termos</a>
+        <a href="/terms.html">Terms</a>
       </div>
     </footer>
 
