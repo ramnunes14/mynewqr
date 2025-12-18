@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Contacto &mdash; QR Generator</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand"><img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" /></div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacidade</a>
+        <a href="/terms.html">Termos</a>
+        <a href="/contact.html">Contacto</a>
+        <a class="cta-header" href="/#generator">Criar QR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>Contacto</h1>
+      <p class="sub">Coloca aqui um email de suporte quando fizeres deploy.</p>
+
+      <div class="row">
+        <label>Email</label>
+        <input value="support@mynewqr.com" readonly />
+      </div>
+
+      <p class="note">Se preferires, podes trocar isto por um formul&aacute;rio (Netlify Forms / Formspree) sem backend pr&oacute;prio.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year"></span> QR Generator</span>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/privacy.html">Privacidade</a>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/terms.html">Termos</a>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/contact.html">Contacto</a>
+    </div>
+  </footer>
+  <script>
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

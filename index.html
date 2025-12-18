@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Substitui o dominio se mudares de host. -->
+    <title>Gerador de QR Code Gr&aacute;tis &mdash; PNG/SVG, Cores e Logo</title>
+    <meta name="description" content="Gera QR Codes gr&aacute;tis para URL, texto, Wi-Fi e vCard. Personaliza cores, tamanho e logo. Faz download em PNG ou SVG." />
+    <link rel="canonical" href="https://mynewqr.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gerador de QR Code Gr&aacute;tis &mdash; PNG/SVG, Cores e Logo" />
+    <meta property="og:description" content="Gera QR Codes gr&aacute;tis para URL, texto, Wi-Fi e vCard. Personaliza e faz download." />
+    <meta property="og:url" content="https://mynewqr.com/" />
+    <meta property="og:image" content="https://mynewqr.com/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- AdSense -->
+    <script async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4302518773090707"
+      crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@type":"WebApplication",
+        "name":"Gerador de QR Code Gr\u00e1tis",
+        "applicationCategory":"UtilityApplication",
+        "operatingSystem":"All",
+        "url":"https://mynewqr.com/",
+        "description":"Gera QR Codes gr\u00e1tis para URL, texto, Wi-Fi e vCard. Exporta PNG/SVG e suporta logo."
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <div class="brand">
+          <img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" />
+        </div>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/privacy.html">Privacidade</a>
+          <a href="/terms.html">Termos</a>
+          <a href="/contact.html">Contacto</a>
+          <a class="cta-header" href="#generator">Criar QR</a>
+        </nav>
+      </div>
+    </header>
+    <div class="hero">
+          <h1>Cria o teu QR Code em segundos</h1>
+          <p class="sub">Gr&aacute;tis &bull; Sem registo &bull; Download PNG e SVG</p>
+        </div>
+    <main class="wrap grid" id="generator">
+      
+      <section class="card">
+        
+
+        <div class="tab-bar" role="tablist" aria-label="Tipo de QR">
+          <button class="tab active" data-type="url" role="tab" aria-selected="true">URL</button>
+          <button class="tab" data-type="text" role="tab" aria-selected="false">Texto</button>
+          <button class="tab" data-type="vcard" role="tab" aria-selected="false">vCard</button>
+          <button class="tab" data-type="wifi" role="tab" aria-selected="false">Wi-Fi</button>
+        </div>
+
+        <div id="inputs" class="input-area"></div>
+
+        <div class="ad-slot slim">
+          <small class="ad-hint">Espa&ccedil;o reservado para an&uacute;ncio</small>
+        </div>
+
+        <details class="details" id="panelDetails">
+          <summary>Personaliza&ccedil;&atilde;o</summary>
+
+          <div class="row2">
+            <div>
+              <label>Error correction</label>
+              <select id="ec">
+                <option value="L">L (7%)</option>
+                <option value="M" selected>M (15%)</option>
+                <option value="Q">Q (25%)</option>
+                <option value="H">H (30%)</option>
+              </select>
+            </div>
+            <div>
+              <label>Cor QR</label>
+              <input id="fg" type="color" value="#111111" />
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label>Fundo</label>
+              <input id="bg" type="color" value="#ffffff" />
+            </div>
+            <div>
+              <label>Logo (opcional)</label>
+              <input id="logo" type="file" accept="image/*" />
+              <small class="hint">Usa EC Q/H para logo.</small>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div>
+              <label>Tamanho do logo (%)</label>
+              <input id="logoScale" type="number" min="10" max="40" value="22" />
+            </div>
+            <div>
+              <label>Arredondar logo</label>
+              <select id="logoRound">
+                <option value="yes" selected>Sim</option>
+                <option value="no">N&atilde;o</option>
+              </select>
+            </div>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button id="btnCopy" class="btn">Copiar imagem</button>
+          <button id="btnReset" class="btn ghost">Reset</button>
+        </div>
+
+        <p class="note">
+          Gerado localmente no teu browser. N&atilde;o guardamos nada.
+        </p>
+      </section>
+
+      <aside class="card preview">
+        <div class="preview-head">
+          
+        </div>
+        <div class="preview-box" id="previewBox">
+          <div class="preview-skeleton"></div>
+          <canvas id="qrCanvas" width="360" height="360"></canvas>
+        </div>
+
+        <div class="download-actions">
+          <button id="btnDownloadPng" class="btn primary">Download PNG</button>
+          <button id="btnDownloadSvg" class="btn outline">Download SVG</button>
+        </div>
+
+        <div class="mini">
+          <div class="mini-item">
+            <span class="mini-k">Conte&uacute;do</span>
+            <span class="mini-v" id="payloadPreview">&mdash;</span>
+          </div>
+          <div class="mini-item">
+            <span class="mini-k">Dica</span>
+            <span class="mini-v">Para logo, usa EC = Q/H (margem padr&atilde;o 2).</span>
+          </div>
+        </div>
+
+        <div class="ad-slot slim">
+          <small class="ad-hint">Espa&ccedil;o reservado para an&uacute;ncio</small>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <span>&copy; <span id="year"></span> QR Generator</span>
+        <span class="sep">&bull;</span>
+        <a href="/privacy.html">Privacidade</a>
+        <span class="sep">&bull;</span>
+        <a href="/terms.html">Termos</a>
+        <span class="sep">&bull;</span>
+        <a href="/contact.html">Contacto</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

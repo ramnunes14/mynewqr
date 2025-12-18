@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Pol&iacute;tica de Privacidade &mdash; QR Generator</title>
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="legal-page">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand"><img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" /></div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacidade</a>
+        <a href="/terms.html">Termos</a>
+        <a href="/contact.html">Contacto</a>
+        <a class="cta-header" href="/#generator">Criar QR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>Pol&iacute;tica de Privacidade</h1>
+      <p class="sub text-muted">Resumo r&aacute;pido: o QR &eacute; gerado localmente no teu browser. N&atilde;o armazenamos o conte&uacute;do que introduzes.</p>
+
+      <h2>Dados gerados</h2>
+      <p class="text-muted">O conte&uacute;do introduzido para gerar o QR Code &eacute; processado apenas no teu dispositivo.</p>
+
+      <h2>Cookies e publicidade</h2>
+      <p class="text-muted">Se ativares Google AdSense, podem existir cookies/tecnologias semelhantes para personaliza&ccedil;&atilde;o e medi&ccedil;&atilde;o de an&uacute;ncios, conforme as pol&iacute;ticas do Google.</p>
+      <p class="text-muted">AdSense pode usar cookies de terceiros e identificadores an&oacute;nimos para personalizar an&uacute;ncios, medir desempenho e prevenir fraude. Podes gerir ou retirar consentimento nas defini&ccedil;&otilde;es do browser e nas op&ccedil;&otilde;es de consentimento do Google (quando presentes).</p>
+      <p class="text-muted">Mais informa&ccedil;&atilde;o: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">pol&iacute;ticas de publicidade do Google</a> e <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">pol&iacute;tica de privacidade do Google</a>.</p>
+
+      <h2>Contacto</h2>
+      <p class="text-muted">Para pedidos relacionados com privacidade: usa a p&aacute;gina de contacto.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year"></span> QR Generator</span>
+      <span class="sep">&bull;</span>
+      <a href="/privacy.html">Privacidade</a>
+      <span class="sep">&bull;</span>
+      <a href="/terms.html">Termos</a>
+      <span class="sep">&bull;</span>
+      <a href="/contact.html">Contacto</a>
+    </div>
+  </footer>
+  <script>
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

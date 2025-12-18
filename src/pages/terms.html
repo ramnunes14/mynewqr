@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Termos &mdash; QR Generator</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body class="legal-page">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand"><img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" /></div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacidade</a>
+        <a href="/terms.html">Termos</a>
+        <a href="/contact.html">Contacto</a>
+        <a class="cta-header" href="/#generator">Criar QR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h1>Termos de Utiliza&ccedil;&atilde;o</h1>
+      <p class="sub text-muted">Ao usar este site, concordas com estes termos.</p>
+
+      <h2>Uso</h2>
+      <p class="text-muted">O servi&ccedil;o &eacute; fornecido &quot;como est&aacute;&quot;. &Eacute;s respons&aacute;vel pelo conte&uacute;do que codificas em QR e por cumprir leis/pol&iacute;ticas aplic&aacute;veis.</p>
+
+      <h2>Limita&ccedil;&atilde;o de responsabilidade</h2>
+      <p class="text-muted">N&atilde;o garantimos compatibilidade com todos os leitores/ambientes e n&atilde;o nos responsabilizamos por danos resultantes do uso.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year"></span> QR Generator</span>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/privacy.html">Privacidade</a>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/terms.html">Termos</a>
+      <span class="sep">&bull;</span>
+      <a href="/src/pages/contact.html">Contacto</a>
+    </div>
+  </footer>
+  <script>
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
