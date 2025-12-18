@@ -44,10 +44,10 @@ main{flex:1;width:100%}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 0}
 .brand{display:flex;align-items:center;gap:14px}
 .brand-logo{
-  height:86px;
+  height:72px;
   width:auto;
   display:block;
-  margin:-12px 0;
+  margin:-8px 0;
 }
 .nav{
   display:flex;
