@@ -7,7 +7,148 @@ setYear();
 
 const DEFAULT_SIZE = 360;
 const DEFAULT_MARGIN = 2;
-const state = { type: "url" };
+const state = { type: "url", lang: "pt" };
+
+const translations = {
+  pt: {
+    metaTitle: "Gerador de QR Code Grátis — PNG/SVG, Cores e Logo",
+    metaDesc: "Gera QR Codes grátis para URL, texto, Wi-Fi e vCard. Personaliza cores, logo e exporta PNG/SVG.",
+    heroTitle: "Cria o teu QR Code em segundos",
+    heroSub: "Grátis • Sem registo • Download PNG e SVG",
+    tabs: { url: "URL", text: "Texto", vcard: "vCard", wifi: "Wi-Fi" },
+    labelURL: "URL",
+    placeholderURL: "https://example.com",
+    labelText: "Texto",
+    placeholderText: "Escreve o texto...",
+    wifi: {
+      ssid: "SSID",
+      pass: "Password",
+      enc: "Encriptação",
+      hidden: "Rede oculta",
+      optEnc: { wpa: "WPA/WPA2", wep: "WEP", nopass: "Sem password" },
+      optHidden: { no: "Não", yes: "Sim" }
+    },
+    vcard: {
+      first: "Nome",
+      last: "Apelido",
+      phone: "Telefone",
+      email: "Email",
+      org: "Empresa",
+      title: "Cargo",
+      website: "Website"
+    },
+    adSlot: "Espaço reservado para anúncio",
+    details: "Personalização",
+    ec: "Error correction",
+    color: "Cor QR",
+    bg: "Fundo",
+    logo: "Logo (opcional)",
+    logoHint: "Usa EC Q/H para logo.",
+    logoSize: "Tamanho do logo (%)",
+    logoRound: "Arredondar logo",
+    optRound: { yes: "Sim", no: "Não" },
+    copy: "Copiar imagem",
+    reset: "Reset",
+    previewTitle: "Pré-visualização",
+    previewDesc: "Atualiza em tempo real.",
+    tip: "Para logo, usa EC = Q/H (margem padrão 2).",
+    downloadPng: "Download PNG",
+    downloadSvg: "Download SVG",
+    note: "Gerado localmente no teu browser. Não guardamos nada."
+  },
+  en: {
+    metaTitle: "Free QR Code Generator — PNG/SVG, Colors & Logo",
+    metaDesc: "Create QR Codes for URL, text, Wi-Fi, and vCard. Customize colors, logo, download PNG/SVG.",
+    heroTitle: "Create your QR Code in seconds",
+    heroSub: "Free • No signup • Download PNG & SVG",
+    tabs: { url: "URL", text: "Text", vcard: "vCard", wifi: "Wi-Fi" },
+    labelURL: "URL",
+    placeholderURL: "https://example.com",
+    labelText: "Text",
+    placeholderText: "Write your text...",
+    wifi: {
+      ssid: "SSID",
+      pass: "Password",
+      enc: "Encryption",
+      hidden: "Hidden network",
+      optEnc: { wpa: "WPA/WPA2", wep: "WEP", nopass: "No password" },
+      optHidden: { no: "No", yes: "Yes" }
+    },
+    vcard: {
+      first: "First name",
+      last: "Last name",
+      phone: "Phone",
+      email: "Email",
+      org: "Company",
+      title: "Job title",
+      website: "Website"
+    },
+    adSlot: "Ad placeholder",
+    details: "Personalization",
+    ec: "Error correction",
+    color: "QR color",
+    bg: "Background",
+    logo: "Logo (optional)",
+    logoHint: "Use EC Q/H for logo.",
+    logoSize: "Logo size (%)",
+    logoRound: "Round logo",
+    optRound: { yes: "Yes", no: "No" },
+    copy: "Copy image",
+    reset: "Reset",
+    previewTitle: "Preview",
+    previewDesc: "Updates in real time.",
+    tip: "For logo, use EC = Q/H (default margin 2).",
+    downloadPng: "Download PNG",
+    downloadSvg: "Download SVG",
+    note: "Generated locally in your browser. We do not store any data."
+  },
+  es: {
+    metaTitle: "Generador de QR Gratis — PNG/SVG, Colores y Logo",
+    metaDesc: "Crea códigos QR para URL, texto, Wi-Fi y vCard. Personaliza colores, logo y descarga PNG/SVG.",
+    heroTitle: "Crea tu código QR en segundos",
+    heroSub: "Gratis • Sin registro • Descarga PNG y SVG",
+    tabs: { url: "URL", text: "Texto", vcard: "vCard", wifi: "Wi-Fi" },
+    labelURL: "URL",
+    placeholderURL: "https://example.com",
+    labelText: "Texto",
+    placeholderText: "Escribe el texto...",
+    wifi: {
+      ssid: "SSID",
+      pass: "Contraseña",
+      enc: "Encriptación",
+      hidden: "Red oculta",
+      optEnc: { wpa: "WPA/WPA2", wep: "WEP", nopass: "Sin contraseña" },
+      optHidden: { no: "No", yes: "Sí" }
+    },
+    vcard: {
+      first: "Nombre",
+      last: "Apellido",
+      phone: "Teléfono",
+      email: "Email",
+      org: "Empresa",
+      title: "Cargo",
+      website: "Sitio web"
+    },
+    adSlot: "Espacio reservado para anuncio",
+    details: "Personalización",
+    ec: "Corrección de error",
+    color: "Color del QR",
+    bg: "Fondo",
+    logo: "Logo (opcional)",
+    logoHint: "Usa EC Q/H para logo.",
+    logoSize: "Tamaño del logo (%)",
+    logoRound: "Redondear logo",
+    optRound: { yes: "Sí", no: "No" },
+    copy: "Copiar imagen",
+    reset: "Reiniciar",
+    previewTitle: "Previsualización",
+    previewDesc: "Se actualiza en tiempo real.",
+    tip: "Para logo, usa EC = Q/H (margen por defecto 2).",
+    downloadPng: "Descargar PNG",
+    downloadSvg: "Descargar SVG",
+    note: "Generado localmente en tu navegador. No guardamos datos."
+  }
+};
 
 const els = {
   tabs: Array.from(document.querySelectorAll(".tab")),
@@ -26,7 +167,12 @@ const els = {
   btnCopy: document.getElementById("btnCopy"),
   btnReset: document.getElementById("btnReset"),
   menuToggle: document.getElementById("menuToggle"),
-  navLinks: document.getElementById("navLinks")
+  navLinks: document.getElementById("navLinks"),
+  langSwitch: document.getElementById("langSwitch"),
+  metaTitle: document.querySelector("title"),
+  metaDesc: document.querySelector('meta[name="description"]'),
+  ogTitle: document.querySelector('meta[property="og:title"]'),
+  ogDesc: document.querySelector('meta[property="og:description"]')
 };
 
 function renderInputs() {

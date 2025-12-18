@@ -19,6 +19,9 @@
     <meta property="og:url" content="https://mynewqr.com/" />
     <meta property="og:image" content="https://mynewqr.com/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" hreflang="pt" href="https://mynewqr.com/" />
+    <link rel="alternate" hreflang="en" href="https://mynewqr.com/?lang=en" />
+    <link rel="alternate" hreflang="es" href="https://mynewqr.com/?lang=es" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/src/style.css" />
@@ -53,8 +56,12 @@
           <a href="/">Home</a>
           <a href="/privacy.html">Privacidade</a>
           <a href="/terms.html">Termos</a>
-          <a href="/contact.html">Contacto</a>
           <a class="cta-header" href="#generator">Criar QR</a>
+          <select id="langSwitch" aria-label="Idioma">
+            <option value="pt">PT</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
         </nav>
       </div>
     </header>
@@ -174,8 +181,6 @@
         <a href="/privacy.html">Privacidade</a>
         <span class="sep">&bull;</span>
         <a href="/terms.html">Termos</a>
-        <span class="sep">&bull;</span>
-        <a href="/contact.html">Contacto</a>
       </div>
     </footer>
 
