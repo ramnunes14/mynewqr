@@ -14,7 +14,10 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand"><img class="brand-logo" src="/logomynewqr.png" alt="mynewqr.com" /></div>
-      <nav class="nav">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="navLinks">
         <a href="/">Home</a>
         <a href="/privacy.html">Privacidade</a>
         <a href="/terms.html">Termos</a>
@@ -55,6 +58,18 @@
   <script>
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
+    const btn = document.getElementById("menuToggle");
+    const nav = document.getElementById("navLinks");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+        nav.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }));
+    }
   </script>
 </body>
 </html>

@@ -24,7 +24,9 @@ const els = {
   btnDownloadPng: document.getElementById("btnDownloadPng"),
   btnDownloadSvg: document.getElementById("btnDownloadSvg"),
   btnCopy: document.getElementById("btnCopy"),
-  btnReset: document.getElementById("btnReset")
+  btnReset: document.getElementById("btnReset"),
+  menuToggle: document.getElementById("menuToggle"),
+  navLinks: document.getElementById("navLinks")
 };
 
 function renderInputs() {
@@ -296,6 +298,19 @@ els.btnReset.addEventListener("click", resetAll);
 els.logo.addEventListener("change", runGenerate);
 els.inputs.addEventListener("input", scheduleGenerate);
 els.inputs.addEventListener("change", scheduleGenerate);
+
+if (els.menuToggle && els.navLinks) {
+  els.menuToggle.addEventListener("click", () => {
+    const open = els.navLinks.classList.toggle("open");
+    els.menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  Array.from(els.navLinks.querySelectorAll("a")).forEach(a => {
+    a.addEventListener("click", () => {
+      els.navLinks.classList.remove("open");
+      els.menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 // init
 setType("url", true);
