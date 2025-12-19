@@ -23,7 +23,6 @@ const els = {
   payloadPreview: document.getElementById("payloadPreview"),
   btnDownloadPng: document.getElementById("btnDownloadPng"),
   btnDownloadSvg: document.getElementById("btnDownloadSvg"),
-  btnCopy: document.getElementById("btnCopy"),
   btnReset: document.getElementById("btnReset"),
   menuToggle: document.getElementById("menuToggle"),
   navLinks: document.getElementById("navLinks")
@@ -177,7 +176,7 @@ async function generate() {
     if (els.previewBox) els.previewBox.classList.remove("loading");
   }
 
-  // guarda para download/copy
+  // guarda para download
   window.__QR_PAYLOAD__ = payload;
   window.__QR_OPTS__ = opts;
 }
@@ -206,17 +205,6 @@ function download(fmt = "png") {
 
     setTimeout(() => URL.revokeObjectURL(url), 500);
   })();
-}
-
-async function copyImage() {
-  try {
-    if (!navigator.clipboard || !window.ClipboardItem) throw new Error("Clipboard API not supported");
-    const blob = await (await fetch(els.canvas.toDataURL("image/png"))).blob();
-    await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
-    toast("Image copied");
-  } catch {
-    toast("Could not copy (try Chrome/Edge).");
-  }
 }
 
 function resetAll() {
@@ -287,7 +275,6 @@ els.tabs.forEach(tab => {
 
 els.btnDownloadPng.addEventListener("click", () => download("png"));
 els.btnDownloadSvg.addEventListener("click", () => download("svg"));
-els.btnCopy.addEventListener("click", copyImage);
 els.btnReset.addEventListener("click", resetAll);
 
 ["ec","fg","bg","logoScale","logoRound"].forEach(id => {
